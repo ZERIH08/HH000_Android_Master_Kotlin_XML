@@ -1,15 +1,22 @@
+#---------------------------------------------------------------------------------------------------
 [versions]
 agp = "8.13.1"
-kotlin = "2.0.21"
-coreKtx = "1.10.1"
+kotlin = "2.2.10"
+ksp = "2.2.10-2.0.2" # kotlin-ksp
+composeBom = "2025.12.00"
+firebaseBom = "34.6.0"
+room = "2.8.4"
+coreKtx = "1.17.0"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.10.0"
-activity = "1.8.0"
-constraintlayout = "2.1.4"
-
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+material = "1.13.0"
+androidx-browser = "1.8.0"
+activity = "1.12.1"
+constraintlayout = "2.2.1"
+pdfboxAndroid = "2.0.27.0"
+#---------------------------------------------------------------------------------------------------
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -19,8 +26,169 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-
+androidx-browser = { group = "androidx.browser", name = "browser", version.ref = "androidx-browser" }
+#---
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-animation = { group = "androidx.compose.animation", name = "animation" }
+compose-animation-core = { group = "androidx.compose.animation", name = "animation-core" }
+compose-animation-graphics = { group = "androidx.compose.animation", name = "animation-graphics" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+compose-material = { group = "androidx.compose.material", name = "material" }
+compose-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" }
+compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-material-ripple = { group = "androidx.compose.material", name = "material-ripple" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-material3-window-size-classx = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+compose-material3-adaptive = { group = "androidx.compose.material3.adaptive", name = "adaptive" }
+compose-material3-adaptive-layout = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout" }
+compose-material3-adaptive-navigation = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
+compose-runtime-rxjava2 = { group = "androidx.compose.runtime", name = "runtime-rxjava2" }
+compose-runtime-rxjava3 = { group = "androidx.compose.runtime", name = "runtime-rxjava3" }
+compose-runtime-saveable = { group = "androidx.compose.runtime", name = "runtime-saveable" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-geometry = { group = "androidx.compose.ui", name = "ui-geometry" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-test = { group = "androidx.compose.ui", name = "ui-test" }
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-ui-text = { group = "androidx.compose.ui", name = "ui-text" }
+compose-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-tooling-data = { group = "androidx.compose.ui", name = "ui-tooling-data" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-ui-unit = { group = "androidx.compose.ui", name = "ui-unit" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+compose-ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding" }
+#---
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-config-ktx = { group = "com.google.firebase", name = "firebase-config-ktx" }
+firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
+firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx" }
+#---
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-rxjava2 = { group = "androidx.room", name = "room-rxjava2", version.ref = "room" }
+androidx-room-rxjava3 = { group = "androidx.room", name = "room-rxjava3", version.ref = "room" }
+androidx-room-guava = { group = "androidx.room", name = "room-guava", version.ref = "room" }
+androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+androidx-room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+#---
+pdfbox-android = { module = "com.tom-roush:pdfbox-android", version.ref = "pdfboxAndroid" }
+#---
+#---------------------------------------------------------------------------------------------------
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+androidx-room = { id = "androidx.room", version.ref = "room" }
+#---------------------------------------------------------------------------------------------------
+[bundles]
 
+compose = [
+    #---
+    "compose-animation",
+    "compose-animation-core",
+    "compose-animation-graphics",
+    "compose-foundation",
+    "compose-foundation-layout",
+    "compose-material",
+    "compose-material-icons-core",
+    "compose-material-icons-extended",
+    "compose-material-ripple",
+    "compose-material3",
+    "compose-material3-window-size-classx",
+    "compose-material3-adaptive",
+    "compose-material3-adaptive-layout",
+    "compose-material3-adaptive-navigation",
+    "compose-runtime",
+    "compose-runtime-livedata",
+    "compose-runtime-rxjava2",
+    "compose-runtime-rxjava3",
+    "compose-runtime-saveable",
+    "compose-ui",
+    "compose-ui-geometry",
+    "compose-ui-graphics",
+    #    "compose-ui-test",            # testImplementation only
+    #    "compose-ui-test-junit4",     # androidTestImplementation only
+    #    "compose-ui-test-manifest",   # androidTestImplementation only
+    "compose-ui-text",
+    "compose-ui-text-google-fonts",
+    #    "compose-ui-tooling",         # debugImplementation only
+    #    "compose-ui-tooling-data",    # debugImplementation only
+    #    "compose-ui-tooling-preview", # debugImplementation only
+    "compose-ui-unit",
+    "compose-ui-util",
+    "compose-ui-viewbinding",
+    #---
+    # for test          # testImplementation(libs.compose.ui.test)
+    # for android test  # androidTestImplementation(libs.compose.ui.test.junit4)
+    # for android test  # androidTestImplementation(libs.compose.ui.test.manifest)
+    # for debug         # debugImplementation(libs.compose.ui.tooling)
+    # for debug         # debugImplementation(libs.compose.ui.tooling.data)
+    # for debug         # debugImplementation(libs.compose.ui.tooling.preview)
+    #---
+    # platform(libs.compose.bom).apply {
+    #     implementation(this)
+    #     testImplementation(this)
+    #     androidTestImplementation(this)
+    #     debugImplementation(this)
+    # }
+    # implementation(libs.bundles.compose)
+    # testImplementation(libs.compose.ui.test)
+    # androidTestImplementation(libs.compose.ui.test.junit4)
+    # androidTestImplementation(libs.compose.ui.test.manifest)
+    # debugImplementation(libs.compose.ui.tooling)
+    # debugImplementation(libs.compose.ui.tooling.data)
+    # debugImplementation(libs.compose.ui.tooling.preview)
+    # alias(libs.plugins.compose.compiler) apply false  // in project build.gradle.kts file
+    # alias(libs.plugins.compose.compiler)              // in module build.gradle.kts file
+    # composeCompiler {                                 // in module build.gradle.kts file
+    #     // position - after plugin and before android block ???
+    #     reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    #     stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+    # }
+]
+firebase = [
+    #---
+    "firebase-config-ktx",
+    "firebase-analytics-ktx",
+    "firebase-crashlytics-ktx",
+    "firebase-perf-ktx",
+    #---
+]
+
+room = [
+    #---
+    "androidx-room-runtime",
+    "androidx-room-ktx", # optional - Kotlin Extensions and Coroutines support for Room
+    #    "androidx-room-rxjava2", # optional - RxJava2 support for Room
+    #    "androidx-room-rxjava3", # optional - RxJava3 support for Room
+    #    "androidx-room-guava", # optional - Guava support for Room, including Optional and ListenableFuture
+    "androidx-room-paging", # optional - Paging 3 Integration
+    #---
+    # if project uses kotlin, use # ksp(libs.androidx.room.compiler)
+    # for only java project,  use # annotationProcessor(libs.androidx.room.compiler)
+    # optional - for test     use # testImplementation(libs.androidx.room.testing)
+    #---
+    # implementation(libs.bundles.room)
+    # ksp(libs.androidx.room.compiler) or annotationProcessor(libs.androidx.room.compiler)
+    # testImplementation(libs.androidx.room.testing)
+    # alias(libs.plugins.androidx.room) apply  // in project build.gradle.kts file
+    # alias(libs.plugins.ksp) apply false      // in project build.gradle.kts file
+    # alias(libs.plugins.androidx.room)        // in module build.gradle.kts file
+    # alias(libs.plugins.ksp)                  // in module build.gradle.kts file
+    # room {                                   // in module build.gradle.kts file
+    #    // Directory where Room will export schema JSONs
+    #    // @app/schemas/ ???
+    #    // position - after plugin and before android block ???
+    #    schemaDirectory("$projectDir/schemas")
+    # }
+    #---
+]
+#---------------------------------------------------------------------------------------------------
