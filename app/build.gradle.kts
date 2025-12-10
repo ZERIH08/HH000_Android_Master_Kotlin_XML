@@ -3,7 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.androidx.room)
+    alias(libs.plugins.room)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -93,6 +94,9 @@ dependencies {
     implementation(libs.bundles.room)
     ksp(libs.androidx.room.compiler) // or annotationProcessor(libs.androidx.room.compiler)
     testImplementation(libs.androidx.room.testing)
+    //----------------------------------------------------------------------------------------------
+    implementation(libs.bundles.hilt)
+    ksp(libs.dagger.hilt.android.compiler)
     //----------------------------------------------------------------------------------------------
     implementation(libs.pdfbox.android)
     //----------------------------------------------------------------------------------------------
