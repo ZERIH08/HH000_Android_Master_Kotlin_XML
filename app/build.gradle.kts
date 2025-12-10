@@ -45,8 +45,11 @@ android {
 
 composeCompiler {
     reportsDestination = layout.buildDirectory.dir("compose_compiler")
-    stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+    stabilityConfigurationFiles.set(
+        listOf(project.layout.projectDirectory.file("stability_config.conf"))
+    )
 }
+
 
 room {
     // Directory where Room will export schema JSONs
@@ -83,12 +86,12 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling.data)
     debugImplementation(libs.compose.ui.tooling.preview)
     //----------------------------------------------------------------------------------------------
-//    platform(libs.firebase.bom).apply {
-//        implementation(this)
-//        testImplementation(this)
-//        androidTestImplementation(this)
-//        debugImplementation(this)
-//    }
+    platform(libs.firebase.bom).apply {
+        implementation(this)
+        testImplementation(this)
+        androidTestImplementation(this)
+        debugImplementation(this)
+    }
 //    implementation(libs.bundles.firebase)
     //----------------------------------------------------------------------------------------------
     implementation(libs.bundles.room)
