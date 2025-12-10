@@ -41,6 +41,10 @@ android {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 composeCompiler {
